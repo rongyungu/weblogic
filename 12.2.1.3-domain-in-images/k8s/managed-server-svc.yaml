@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: managed-server
+  name: managed-server
+  namespace: weblogic
+spec:
+  ports:
+  - name: tcp-8001
+    port: 8001
+    protocol: TCP
+    targetPort: 8001
+  selector:
+    app: managed-server
+  type: ClusterIP
